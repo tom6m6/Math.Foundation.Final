@@ -1,0 +1,479 @@
+\documentclass[12pt,a4paper,openany,twoside]{ctexbook}
+\input{setup/package.tex}   %引用宏包所在位置
+\input{setup/format.tex}    %格式所在位置
+\input{setup/math_symbol}
+\input{setup/refer}
+
+\newcommand{\underbox}[2]{\kern0pt\underline{\makebox[#1]{#2}}\kern0pt\relax}
+\newcommand{\purespace}[1]{\kern0pt {\hspace{#1}}\kern0pt\relax}
+
+\begin{document}
+	
+	\setcounter{chapter}{1}
+	\chapter*{华东师范大学期末试卷 (A 卷) 答案}
+	\vspace{-1cm}
+	\section*{2023—2024学年第一学期}
+	%\begin{center}
+	%	学院：数据科学与工程学院 \qquad 考试形式：闭卷 \qquad 所需时间：120分钟
+	%\end{center}
+	\begin{center}
+		考试科目：\underbox{11\ccwd}{数据科学与工程数学基础} \quad 任课教师：\underbox{6\ccwd}{黄定江} \\
+		姓\purespace{2\ccwd}名：\underbox{11\ccwd}{} \quad 学\purespace{2\ccwd}号：\underbox{6\ccwd}{} \\
+		专\purespace{2\ccwd}业：\underbox{11\ccwd}{} \quad 班\purespace{2\ccwd}级：\underbox{6\ccwd}{}\\
+	\end{center}
+	%\begin{center}
+	%	考生姓名：\underline{~~~~~~}\underline{~~~~~~}\qquad 学号：\underline{~~~~~~}\underline{~~~~~~}\qquad 专业：\underline{~~~~~~}\underline{~~~~~~}\qquad 任课教师：黄定江
+	%\end{center}
+	{ \begin{center}
+			\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+				\hline 
+				题号 & 一 & 二 & 三 & 四 & 五 & 六 & 七 & 八&总分 &阅卷人签名 \\ 
+				\hline 
+				%			满分 & 13 & 10 & 13 & 13 & 12 & 12 & 13 & 14 & 100  \\ 
+				%			\hline 
+				得分 &  &  &  &  &  &  &  & & & \\ 
+				\hline 
+				%			阅卷人 &  &  &  &  &  &  &  & &  \\ 
+				%			\hline 
+			\end{tabular} 
+			
+	\end{center}}
+
+
+\begin{exercise}(13')
+	完成以下问题：
+	
+	\begin{itemize}
+		\item [(1)]  对矩阵$\MM = \begin{pmatrix}
+			5& 3& -1&  3\\
+			0& 1&  1& -2\\
+			-5& -3&  4& -4\\
+			0&  1&  1&  0\\
+		\end{pmatrix}$进行LU分解；
+		\item [(2)] 设 $A$ 对称且 $a_{11} \neq 0$, 并假 经过一步 Gauss 消去之后, $A$ 具有如下形式
+		$$
+		\left[\begin{array}{ll}
+			a_{11} & a_1^{\mathrm{T}} \\
+			\VO & A_2
+		\end{array}\right]
+		$$
+		证明：$A_2$仍是对称矩阵。
+	\end{itemize}
+	
+\end{exercise}
+\begin{Solution}
+	（1）\begin{center}
+		$\MA=\begin{pmatrix}
+			5& 3& -1&  3\\
+			0& 1&  1& -2\\
+			-5& -3&  4& -4\\
+			0&  1&  1&  0\\
+		\end{pmatrix}
+		=
+		\begin{pmatrix}
+			1& 0& 0&  0\\
+			0& 1&  0& 0\\
+			-1& 0&  1& 0\\
+			0&  1&  0&  1\\
+		\end{pmatrix}
+		\begin{pmatrix}
+			5& 3& -1&  3\\
+			0& 1&  1& -2\\
+			0& 0&  3& -1\\
+			0&  0&  0&  2\\
+		\end{pmatrix}
+		=\ML\MU$
+	\end{center}
+	\hfill \textcolor{red}{\textbf{（7分）}}
+	
+	（2）记矩阵$A$和高斯变换矩阵分别为：
+	$$
+	A = \left[\begin{array}{ll}
+		a_{11} & a_1^{\mathrm{T}} \\
+		a_1 & A_1
+	\end{array}\right],
+	G = \left[\begin{array}{ll}
+		1 & \VO^{\mathrm{T}} \\
+		-l_1 & I
+	\end{array}\right]
+	$$
+	则
+	$$
+	GA=\left[\begin{array}{ll}
+		a_{11} & a_1^{\mathrm{T}} \\
+		-a_{11} l_1+a_1 & -l_1 a_1^{\mathrm{T}} + A_1
+	\end{array}\right]
+	$$
+	易知$-a_{11} l_1+a_1=\VO$以及$A_2=-l_1 a_1^{\mathrm{T}} + A_1$。由第一个等式可得$l_1=1/a_{11} a_1$，代入第二个等式知
+	$$A_2=-\frac{1}{a_{11}} a_1 a_1^{\mathrm{T}} + A_1.$$
+	故可知$A_2$仍是对称矩阵。 \hfill \textcolor{red}{\textbf{（6分）}}
+\end{Solution}
+
+
+\begin{exercise}(10')
+	$ \NR^5 $的欧氏空间。子空间$U \subseteq \mathbb{R}^{5}$ 和 $\Vx  \in \mathbb{R}^{5}$如下：
+	\[
+	U=\spn \left\{ \left[\begin{array}{c}{0} \\ {-1} \\ {2} \\ {0} \\ {1}\end{array}\right],\left[\begin{array}{c}{1} \\ {-1} \\ {1} \\ {-1} \\ {1}\end{array}\right]
+%	,\left[\begin{array}{c}{-3} \\ {4} \\ {1} \\ {2} \\ {1}\end{array}\right],\left[\begin{array}{c}{-1} \\ {-3} \\ {5} \\ {0} \\ {7}\end{array}\right]
+	\right\}, \quad \boldsymbol{x}=\left[\begin{array}{c}{0} \\ {1} \\ {0} \\ {0} \\ {0}\end{array}\right]
+	\]
+	
+	请确定$ \Vx  $在子空间$ \SetU $上的正交投影$ \pi_{\SetU}(\boldsymbol{x}) ;$
+	
+\end{exercise}
+\begin{Solution}
+首先，将$U$中的基向量构成矩阵$A$：
+\[
+A=\left[\begin{array}{ll}
+	0 & 1 \\
+	-1 & -1 \\
+	2 & 1 \\
+	0 & -1 \\
+	1 & 1 
+\end{array}\right]
+\]
+
+易计算出
+\[
+A\T A=\left[\begin{array}{ll}
+	6 & 4 \\
+	4 & 5 
+\end{array}\right], \quad
+(A\T A)^{-1}=\left[\begin{array}{ll}
+	5/14 & -2/7 \\
+	-2/7 & 3/7 
+\end{array}\right]
+\]
+
+\hfill \textcolor{red}{\textbf{（4分）}}
+ 
+然后，计算投影矩阵$P_U$：
+\[
+P_U=\left[\begin{array}{ccccc}
+	3/7 & -1/7 & -1/7 & -3/7 & 1/7 \\
+	-1/7 & 3/14 & -2/7 & 1/7 & -3/14 \\
+	-1/7 & -2/7 & 5/7 & 1/7 & 2/7 \\
+	-3/7 & 1/7 & 1/7 & 3/7 & -1/7 \\
+	1/7 & -3/14 & 2/7 & -1/7 & 3/14 
+\end{array}\right]
+\]
+因此，投影
+\[
+\pi_U(x) = P_U x = (-1/7, ~ 3/14, ~ -2/7, ~ 1/7, ~ -3/14)
+\]
+
+\hfill \textcolor{red}{\textbf{（6分）}}
+	
+\end{Solution}
+
+
+
+
+\begin{exercise}(13')
+	完成下列矩阵函数求梯度：
+	\begin{itemize}
+		\item [(1)] 求函数$f(\Vx)=\Va\T \Vx$ 和 $g(\Vx)=\Vx\T \MA \Vx$ 的 Hessian 矩阵；
+		\item [(2)] 考虑一个两层的全连接神经网络：
+		\[
+		\Vy=\Vf(\Vx)=\mathrm{ReLU}(\MA_2(\mathrm{ReLU}(\MA_1\Vx+\Vb_1))+\Vb_2)	
+		\]
+		其中\[
+		\MA_1=\begin{bmatrix}
+			2&3\\
+			-2&1\\
+			3&-1
+		\end{bmatrix}	,\MA_2=\begin{bmatrix}
+			3&-1&0\\
+			1&-2&2
+		\end{bmatrix},\Vb_1=\begin{bmatrix}
+			-1\\4\\-2
+		\end{bmatrix},\Vb_2=\begin{bmatrix}
+			2\\-3
+		\end{bmatrix}
+		\]
+		假设输入为$\Vx=(1,-1)$，并且对应的真实输出为$\hat{\Vy}=(0,1)$，采用平方损失$L=\frac12\|\Vy-\hat{\Vy}\|_2^2$。
+		试计算函数$L$关于$\Vb_1$的梯度。
+	\end{itemize}
+\end{exercise}
+
+\begin{Solution}
+	（1）因为$\frac{\partial f}{\partial \Vx} = \Va $，因此 $H_f = \MO$。又
+	$$
+	\begin{aligned}
+		d(g)&= Tr( d\Vx\T \cdot \MA \Vx + \MA \Vx d\Vx)\\
+		&=Tr(\Vx\T (\MA\T + \MA) d\Vx)
+	\end{aligned}
+	$$
+	所以 Hessian 矩阵$H_g = \MA\T + \MA$。
+	\hfill \textcolor{red}{\textbf{（5分）}}
+	
+	（2）
+	
+	先计算前项过程：\[
+	\MA_1\Vx+\Vb_1=\begin{bmatrix}
+		-2\\1\\2
+	\end{bmatrix},	\MA_2(\mathrm{ReLU}(\MA_1\Vx+\Vb_1))+\Vb_2=\begin{bmatrix}
+		1\\0
+	\end{bmatrix}
+	\]
+	故$\Vy=(1,0)$，
+	从而$L=1$。
+	记\[
+	\Vk=\mathrm{ReLU}(\MA_1\Vx+\Vb_1)
+	\]然后分别计算\[
+	\frac{\partial L}{\partial \Vy}=\begin{bmatrix}
+		1\\-1
+	\end{bmatrix},	\frac{\partial \Vy\T}{\partial \Vk}=\begin{bmatrix}
+		3&0\\-1&0 \\0&0
+	\end{bmatrix},	\frac{\partial \Vk\T}{\partial \Vb_1}=\begin{bmatrix}
+		0&0&0\\0&1&0\\0&0&1
+	\end{bmatrix}	
+	\]
+	
+	所以有\[
+	\frac{\partial L}{\partial \Vb_1}=\frac{\partial \Vk\T}{\partial \Vb_1}\frac{\partial \Vy\T}{\partial \Vk}\frac{\partial L}{\partial \Vy}	=\begin{bmatrix}
+		0&0&0\\0&1&0\\0&0&1
+	\end{bmatrix}	\begin{bmatrix}
+		3&0\\-1&0\\0&0
+	\end{bmatrix}\begin{bmatrix}
+		1\\-1
+	\end{bmatrix}=\begin{bmatrix}
+		0\\-1\\0
+	\end{bmatrix}
+	\]
+	\hfill \textcolor{red}{\textbf{（8分）}}
+	
+\end{Solution}
+
+
+\begin{exercise}(13')
+	完成下列问题：
+ \begin{itemize}
+ 	\item [(1)] 设已知矩阵$ \MM \in \mathbb{R}^{m \times n} $的SVD分解为 $\MU \MSigma \MV\T$，请写出拼接矩阵 $\MA = [\MM \quad \MM]$ 的奇异值分解；
+ 	\item [(2)] 令 $\MA$ 为 $m\times n$矩阵，且 $\MP$ 为 $m\times m$正交矩阵。证明：$\MP \MA$与$\MA$的奇异值相同。并说明矩阵$\MP \MA$与$\MA$的左、右奇异向量有何关系？
+ \end{itemize}
+\end{exercise}
+\begin{Solution}
+	（1）因为$\MM=\MU \MSigma \MV\T$，因此
+		\[
+		\MA \MA\T = 2 \MM \MM\T = \MU \cdot 2\MSigma_{m \times m}^2 \cdot \MU\T.
+		\]
+		故
+		$\MA$的奇异值为 $\sqrt{2}\MSigma_{m \times 2n}$，左奇异向量构成的正交矩阵就是$\MU$。
+		\hfill \textcolor{red}{\textbf{（3分）}}
+		
+		由$\MU\T \MA$与右奇异向量（设为$\MV_{\MA}$）的关系可直接计算出
+		$$[\MSigma_{m \times n}\MV\T \quad \MSigma_{m \times n}\MV\T] = \sqrt{2} \MSigma_{m \times 2n} \MV_{\MA}\T$$
+		对比等式两边可得 $\MV_{\MA}\T$ 的前 $n$ 行即为 $[\frac{1}{\sqrt{2}}\MV\T \quad \frac{1}{\sqrt{2}}\MV\T]$。对此进行正交扩充，可得
+		$$
+		\MV_{\MA}\T = 
+		\left[\begin{array}{ll}
+			\frac{1}{\sqrt{2}}\MV\T & \frac{1}{\sqrt{2}}\MV\T \\
+			\frac{1}{\sqrt{2}}\MV\T & -\frac{1}{\sqrt{2}}\MV\T
+		\end{array}\right]
+		$$
+\hfill \textcolor{red}{\textbf{（4分）}}
+
+	（2）因为 $(\MP\MA)\T (\MP\MA) = \MA\T\MP\T\MP\MA=\MA\T\MA$，故它们的奇异值相同。
+	
+	\hfill \textcolor{red}{\textbf{（2分）}}
+	
+	假设$\MA$的SVD分解为
+	$$
+	\MA=U \Sigma V^{\mathrm{T}}
+	$$
+	其中 $U, V \in \mathbb{R}^{n \times n}$ 正交。故
+	$$
+	\MP\MA=\MP U \Sigma V^{\mathrm{T}}
+	$$
+	因为$\MP$为正交矩阵，因此$\MP U$为其左奇异向量，$V$就是$\MP \MA$的右奇异向量。
+	
+	\hfill \textcolor{red}{\textbf{（4分）}}	
+	
+\end{Solution}
+
+
+\begin{exercise}(12')
+	已知矩阵\[ \MM = \begin{pmatrix}
+		5&1&2\\
+		-2&-3&4\\
+		1&3&-1\\
+	\end{pmatrix}
+	\]
+	\begin{itemize}
+		\item [(1)] 计算矩阵 $\MM$ 的 $1$ 范数和$\infty$范数；
+		\item [(2)] 证明：如果矩阵 $\MA = [\Va_1, \Va_2, \cdots, \Va_n]$ 是按列分块的，那么 $\|\MA\|_F^2 = \|\Va_1\|_2^2 + \|\Va_2\|_2^2 + \cdots + \|\Va_n\|_2^2$。
+		\item [(3)] 设$ a_1,a_2,\cdots,a_n $是$ n $个正数，证明：由
+		$$ \Omega(\Vx)=\left(\sum_{i=1}^na_ix_i^2\right)^{\frac{1}{2}} $$
+		定义的函数$ \Omega: \NR^n\to\NR $是一个范数。
+	\end{itemize}
+\end{exercise}
+\begin{Solution}
+	（1）	
+	$$\|\MM\|_1=\max\{5+|-2|+1, 1+|-3|+3, 2+4+|-1|\}=8$$ 
+	$$\|\MM\|_{\infty}=\max\{5+1+2, |-2|+|-3|+4, 1+3+|-1|\}=9$$
+	\hfill \textcolor{red}{\textbf{（2分）}}
+	
+	（2）因为矩阵 $\MA$ 的 $F$范数的平方是矩阵各元素的平方和，而$\Va_1$的$\ell_2$范数的平方是矩阵第一列元素的平方和，以此类推，$\Va_n$的$\ell_2$范数的平方是矩阵第$n$列元素的平方和。因此，的证
+	\hfill \textcolor{red}{\textbf{（5分）}}
+	
+	（3）可以通过定义证明该函数具有范数的非负性、齐次性和三角不等式，只要证明过程合理即可。 \hfill \textcolor{red}{\textbf{（5分）}}
+\end{Solution}
+
+
+\begin{exercise}(12')
+	求解以下问题：
+\begin{itemize}
+	\item [(1)] 假设$X_{1} \rightarrow X_{2} \rightarrow X_{3} \rightarrow \cdots \rightarrow X_{n}$ 是一个马尔科夫链，即
+	$$
+	p\left(x_{1}, x_{2}, \ldots, x_{n}\right)=p\left(x_{1}\right) p\left(x_{2} \mid x_{1}\right) \cdots p\left(x_{n} \mid x_{n-1}\right)
+	$$
+	试化简 $I\left(X_{1} ; X_{2}, \ldots, X_{n}\right)$。
+	\item [(2)] $X$和$Y$是$\{0,1,2,3\}$上的独立、等概率分布的随机变量，求 $H(X+Y)$。
+\end{itemize}
+
+\end{exercise}
+\begin{Solution}
+	（1）$$
+	\begin{aligned}
+		I\left(X_{1} ; X_{2}, \ldots, X_{n}\right) &=H\left(X_{1}\right)-H\left(X_{1} \mid X_{2}, \ldots, X_{n}\right) \\
+		&=H\left(X_{1}\right)-\left[H\left(X_{1}, X_{2}, \ldots, X_{n}\right)-H\left(X_{2}, \ldots, X_{n}\right)\right] \\
+		&=H\left(X_{1}\right)-\left[\sum_{i=1}^{n} H\left(X_{i} \mid X_{i-1}, \ldots, X_{1}\right)-\sum_{i=2}^{n} H\left(X_{i} \mid X_{i-1}, \ldots, X_{2}\right)\right] \\
+		&=H\left(X_{1}\right)-\left[\left(H\left(X_{1}\right)+\sum_{i=2}^{n} H\left(X_{i} \mid X_{i-1}\right)\right) -\left(H\left(X_{2}\right)+\sum_{i=3}^{n} H\left(X_{i} \mid X_{i-1}\right)\right)\right] \\
+		&=H\left(X_{2}\right)-H\left(X_{2} \mid X_{1}\right) \\
+		&=I\left(X_{2} ; X_{1}\right) \\
+		&=I\left(X_{1} ; X_{2}\right)
+	\end{aligned}
+	$$
+	\hfill \textcolor{red}{\textbf{（7分）}}
+	
+	
+	
+	（2）。
+	解：$X+Y$的分布律
+	
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{cccccccc}
+			\hline
+			$X+Y$ & 0 & 1 & 2 & 3 & 4 & 5 & 6 \\
+			\hline
+			概率 & 1/16 & 2/16 & 3/16 & 4/16 & 3/16 & 2/16 & 1/16 \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	因此
+	\[
+	H(X+Y) =-( 2\frac{1}{16} \log_2 \frac{1}{16} + 2\frac{2}{16} \log_2 \frac{2}{16} + 2\frac{3}{16} \log_2 \frac{3}{16} + \frac{4}{16} \log_2 \frac{4}{16})
+	\]
+	也可以用其他对数，这里可化简也可以不化简。
+	
+	\hfill \textcolor{red}{\textbf{（5分）}}
+\end{Solution}
+
+
+
+
+\begin{exercise}(13')
+	求解下述问题：
+	\begin{itemize}
+		\item[(1)] 请计算负熵函数 $f(\Vx)=\sum_{i=1}^{n} x_i \log x_i$ 的共轭函数。
+		
+		
+		\item [(2)] 用Lagrange乘子法求欠定方程$ \MA\Vx=\Vb $的最小二范数解，其中$ \MA\in\NR^{m\times n},m\leq n,\rank(\MA)=m $。
+	\end{itemize}
+\end{exercise}
+\begin{Solution}
+	（1）设 $g(x) = \langle x,y \rangle-f(x) = \langle x,y \rangle-\sum_{i=1}^{n} x_i \log x_i$，
+	对$x$求梯度可得：
+	\[
+	\nabla g = [y_1-\log x_1 - 1~ y_2-\log x_2 - 1~ \cdots~ y_n-\log x_n - 1]\T
+	\]
+	因此，可得最优解为 $x_i = e^{y_i - 1}$，代入即得：
+	\[
+	f^* (\Vy) = \sum_{i=1}^{n} e^{y_i - 1}.
+	\]
+	
+	\hfill \textcolor{red}{\textbf{（6分）}}
+	
+	（2）优化问题为\[ 	\begin{aligned}
+		\texttt{min} \quad & f(\Vx)=\frac{1}{2}\Vert \Vx\Vert_{2}^2 \\
+		\texttt{suject to} \quad & \MA\Vx=\Vb
+	\end{aligned} \]
+	Lagrange函数为：
+	\[ L(\Vx,
+	\Vlambda)=\frac{1}{2}\Vx\T\Vx-\Vlambda\T(\MA\Vx-\Vb) \]
+	\[ \frac{\partial L}{\partial \Vx}= \Vx -\MA\T\Vlambda\]
+	令$ \frac{\partial L}{\partial \Vx}=0 $，有：
+	\[ \Vx=\MA\T\Vlambda \]
+	\[ g(\Vlambda)=-\frac{1}{2}\Vlambda\T\MA\MA\T\lambda+\Vlambda\T\Vb \]
+	令$ \frac{\partial g}{\partial \Vlambda}=0  $：
+	\[ -\MA\MA\T\lambda+\Vb=0 \]
+	由$ \MA\in\NR^{m\times n},\rank(\MA)=m $得$ \MA\MA\T $可逆，因此
+	\[ \Vlambda=(\MA\MA\T)^{-1}\Vb \]
+	因此，$ \Vx $满足$ \MA\Vx=\Vb $的最小二范数解： \[ \Vx=\MA\T(\MA\MA\T)^{-1}\Vb  \]
+	
+	\hfill \textcolor{red}{\textbf{（7分）}}
+\end{Solution}
+
+\begin{exercise}(14')
+	求解如下优化问题
+	\begin{itemize}
+		\item [(1)] 使用梯度下降法和固定步长$\lambda =0.1$计算$\min f(x)=(x_{1}-1)^{2}+16(x_{2}-2)^{2} \quad $, 初始点$x^{(0)}=(3,2)^{T}$，迭代至第三步后终止，请计算迭代过程中的解、梯度和函数值（第三步不用计算梯度和函数值，计算结果保留小数点后两位）。
+		\item[(2)] 请谈谈牛顿法与BFGS方法之间的区别与联系。
+	\end{itemize}
+\end{exercise}
+
+\begin{Solution}
+	（1）易求得梯度为：
+	\[
+	\nabla f = [2(x_1 - 1) \quad 32(x_2 - 2) ]\T
+	\]
+	具体迭代结果：\\
+	\begin{center}
+		$\begin{array}{c|c|c|c}
+			\hline k & x^{(k)^{\mathrm{T}}} &g_k^{\mathrm{T}}& f_k \\
+			\hline 0 & (3,2) & (4,0) & 4  \\
+			1 & (2.6,2) &(3.2, 0) & 2.56 \\
+			2 & (2.28,2) & (2.56, 0) & 1.6384 \\
+			3 & (2.024,2) &  &  \\
+			\hline
+		\end{array}$
+	\end{center}
+
+	\hfill \textcolor{red}{\textbf{（8分）}}
+	
+	（2）牛顿法（Newton's method）和BFGS算法（Broyden-Fletcher-Goldfarb-Shanno algorithm）都是优化算法，用于求解无约束非线性优化问题。它们都属于迭代优化算法，但有一些关键的区别。
+	
+	\textbf{1. 原理和基本思想:}
+	\begin{itemize}
+		\item 牛顿法：基于二阶导数（Hessian矩阵）的信息，通过迭代更新当前点的位置，以找到目标函数的极小值点。牛顿法通常收敛速度很快，但需要计算和存储Hessian矩阵，这可能在高维问题中成为一个挑战。
+		
+		\item BFGS算法：也是基于二阶导数的信息，但它通过估计Hessian矩阵的逆矩阵来进行迭代。相较于牛顿法，BFGS不需要直接计算和存储Hessian矩阵，这降低了存储和计算的复杂性。
+	\end{itemize}
+	
+	\textbf{2. 更新规则:}
+	\begin{itemize}
+		\item 牛顿法：通过解线性方程系统来计算下降方向。牛顿法的更新规则是直接基于Hessian矩阵和梯度的。
+		
+		\item BFGS算法：通过迭代更新逆Hessian矩阵的估计值，以获得下降方向。BFGS的更新规则更为复杂，但避免了直接计算Hessian矩阵的需求。
+	\end{itemize}
+	
+	\textbf{3. 收敛性:}
+	\begin{itemize}
+		\item 牛顿法：在适当的条件下，牛顿法通常具有二次收敛性，收敛速度较快，但可能受到Hessian矩阵的病态性（ill-conditioning）的影响。
+		
+		\item BFGS算法：通常也具有二次收敛性，但相对于牛顿法更具有稳定性，特别是在高维问题中，因为它不需要直接处理Hessian矩阵。
+	\end{itemize}
+	
+	总体上，只要言之有理，且答到关键点即可给分。
+	
+	\hfill \textcolor{red}{\textbf{（6分）}}
+\end{Solution}
+
+
+
+
+\end{document}
+

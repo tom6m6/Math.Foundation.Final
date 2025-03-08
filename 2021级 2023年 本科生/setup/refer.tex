@@ -1,0 +1,80 @@
+\let\olddefinition\definition
+\let\oldproposition\proposition
+\let\oldtheorem\theorem
+\let\oldlemma\lemma
+\let\oldaxiom\axiom
+\let\oldcorollary\corollary
+\let\oldcharacter\character
+\let\oldexercise\exercise
+\let\oldexam\exam
+\let\oldexample\example
+
+\let\oldequation\equation
+
+%\renewcommand{\definition}{\olddefinition\label{dy:\thedefinition}}
+%\renewcommand{\proposition}{\oldproposition\label{mt:\theproposition}}
+%\renewcommand{\theorem}{\oldtheorem\label{dl:\thetheorem}}
+%\renewcommand{\lemma}{\oldlemma\label{yl:\thelemma}}
+%\renewcommand{\axiom}{\oldaxiom\label{gl:\theaxiom}}
+%\renewcommand{\corollary}{\oldcorollary\label{tl:\thecorollary}}
+%\renewcommand{\character}{\oldcharacter\label{xz:\thecharacter}}
+%\renewcommand{\exercise}{\oldexercise\label{xt:\theexercise}}
+%\renewcommand{\exam}{\oldexam\label{li:\theexam}}
+%\renewcommand{\example}{\oldexample\label{cx:\theexample}}
+
+%\renewcommand{\equation}{\oldequation\label{gs:\theequation}}
+%\newcommand{\gslbl}[3]{\label{gs:#1:#2:#3}}
+%\newcommand{\gsref}[3]{式\ref{gs:#1:#2:#3}}
+%\newcommand{\gslast}{式\ref{gs:\theequation}}
+
+%从此处开始看
+%标签
+\newcommand{\dylbl}[1]{\label{dy:#1}}
+\newcommand{\mtlbl}[1]{\label{mt:#1}}
+\newcommand{\dllbl}[1]{\label{dl:#1}}
+\newcommand{\yllbl}[1]{\label{yl:#1}}
+\newcommand{\gllbl}[1]{\label{gl:#1}}
+\newcommand{\tllbl}[1]{\label{tl:#1}}
+\newcommand{\xzlbl}[1]{\label{xz:#1}}
+\newcommand{\xtlbl}[1]{\label{xt:#1}}
+\newcommand{\lilbl}[1]{\label{li:#1}}
+\newcommand{\cxlbl}[1]{\label{cx:#1}}
+
+%引用
+\newcommand{\dyref}[1]{定义\ref{dy:#1}}
+\newcommand{\mtref}[1]{命题\ref{mt:#1}}
+\newcommand{\dlref}[1]{定理\ref{dl:#1}}
+\newcommand{\ylref}[1]{引理\ref{yl:#1}}
+\newcommand{\glref}[1]{公理\ref{gl:#1}}
+\newcommand{\tlref}[1]{推论\ref{tl:#1}}
+\newcommand{\xzref}[1]{性质\ref{xz:#1}}
+\newcommand{\xtref}[1]{习题\ref{xt:#1}}
+\newcommand{\liref}[1]{例 \ref{li:#1}}
+\newcommand{\cxref}[1]{程序\ref{cx:#1}}
+
+%引用最后一个，只能在本节内部，可以不打标签
+\newcommand{\dylast}[1][0]{\addtocounter{definition}{-#1}定义\ref{dy:\thedefinition}%
+	\addtocounter{definition}{#1}}
+\newcommand{\mtlast}[1][0]{\addtocounter{proposition}{-#1}命题\ref{mt:\theproposition}%
+	\addtocounter{proposition}{#1}}
+\newcommand{\dllast}[1][0]{\addtocounter{theorem}{-#1}定理\ref{dl:\thetheorem}%
+	\addtocounter{theorem}{#1}}
+\newcommand{\yllast}[1][0]{\addtocounter{lemma}{-#1}引理\ref{yl:\thelemma}%
+	\addtocounter{lemma}{#1}}
+\newcommand{\gllast}[1][0]{\addtocounter{axiom}{-#1}公理\ref{gl:\theaxiom}%
+	\addtocounter{axiom}{#1}}
+\newcommand{\tllast}[1][0]{\addtocounter{corollary}{-#1}推论\ref{tl:\thecorollary}%
+	\addtocounter{corollary}{#1}}
+\newcommand{\xzlast}[1][0]{\addtocounter{character}{-#1}性质\ref{xz:\thecharacter}%
+	\addtocounter{character}{#1}}
+\newcommand{\xtlast}[1][0]{\addtocounter{exercise}{-#1}习题\ref{xt:\theexercise}%
+	\addtocounter{exercise}{#1}}
+\newcommand{\lilast}[1][0]{\addtocounter{exam}{-#1}例  \ref{li:\theexam}%
+	\addtocounter{exam}{#1}}
+\newcommand{\cxlast}[1][0]{\addtocounter{example}{-#1}程序\ref{cx:\theexample}%
+	\addtocounter{example}{#1}}
+
+%引用最后一个公式，只能在本章内部，没有超链接，可以不打标签
+
+\newcommand{\gslast}[1][0]{\addtocounter{equation}{-#1}%
+	(\theequation)\addtocounter{equation}{#1}}
